@@ -1,14 +1,14 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { KafkaModule } from './kafka/kafka.module';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { KafkaModule } from "./kafka/kafka.module";
 
 @Module({
   imports: [
-    KafkaModule.forRoot('peruri', {
-      eventHost: 'localhost:9092',
-      logHost: 'localhost:9092',
-      topics: ['logs', 'tis-data'],
+    KafkaModule.forRoot("peruri", {
+      eventHost: "localhost:9092",
+      logHost: "localhost:9092",
+      topics: ["logs", "tis-data"],
     }),
   ],
   controllers: [AppController],

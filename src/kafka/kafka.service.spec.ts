@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { KafkaService } from './kafka.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { KafkaService } from "./kafka.service";
 
-describe('KafkaService', () => {
+describe("KafkaService", () => {
   let service: KafkaService;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('KafkaService', () => {
     service = module.get<KafkaService>(KafkaService);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(service).toBeDefined();
   });
 });

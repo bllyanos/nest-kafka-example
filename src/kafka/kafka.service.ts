@@ -1,8 +1,8 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
-import { Kafka, Producer as KafkaProducer } from 'kafkajs';
-import { Broker } from './broker';
-import { LogProducer } from './log-producer';
-import { Producer } from './producer';
+import { Injectable, OnModuleInit } from "@nestjs/common";
+import { Kafka, Producer as KafkaProducer } from "kafkajs";
+import { Broker } from "./broker";
+import { LogProducer } from "./log-producer";
+import { Producer } from "./producer";
 
 const retry = { retries: 6 };
 

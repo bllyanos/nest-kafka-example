@@ -1,4 +1,4 @@
-import { Producer as KafkaProducer } from 'kafkajs';
+import { Producer as KafkaProducer } from "kafkajs";
 
 export class Producer {
   private readonly topic: string;

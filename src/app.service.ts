@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { KafkaService } from './kafka/kafka.service';
-import { LogProducer } from './kafka/log-producer';
-import { Producer } from './kafka/producer';
+import { Injectable } from "@nestjs/common";
+import { KafkaService } from "./kafka/kafka.service";
+import { LogProducer } from "./kafka/log-producer";
+import { Producer } from "./kafka/producer";
 
 @Injectable()
 export class AppService {
@@ -10,11 +10,11 @@ export class AppService {
 
   constructor(private readonly kafkaService: KafkaService) {
     this.logProducer = kafkaService.getLogProducer();
-    this.tisProducer = kafkaService.getProducer('tis-data');
+    this.tisProducer = kafkaService.getProducer("tis-data");
   }
 
   getHello(): string {
-    this.logProducer.sendLog('hello', 'helo');
-    return 'Hello World!';
+    this.logProducer.sendLog("hello", "helo");
+    return "Hello World!";
   }
 }

@@ -1,6 +1,6 @@
-import { DynamicModule, Module, Provider } from '@nestjs/common';
-import { Broker } from './broker';
-import { KafkaService } from './kafka.service';
+import { DynamicModule, Module, Provider } from "@nestjs/common";
+import { Broker } from "./broker";
+import { KafkaService } from "./kafka.service";
 
 @Module({
   providers: [KafkaService],
