@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { KafkaService } from "./kafka/kafka.service";
+import { LogLevel } from "./kafka/log-level";
 import { LogProducer } from "./kafka/log-producer";
 import { Producer } from "./kafka/producer";
 
@@ -14,7 +15,7 @@ export class AppService {
   }
 
   getHello(): string {
-    this.logProducer.sendLog("hello", "helo");
+    // this.logProducer.sendLog()
     return "Hello World!";
   }
 }

@@ -16,7 +16,13 @@ export class KafkaService implements OnModuleInit {
   private _eventProducer: KafkaProducer;
   private _logProducer: KafkaProducer;
 
-  constructor(clientId: string, broker: Broker) {
+  constructor(
+    clientId: string,
+    broker: Broker,
+    LogProducerClass: new (
+      producer: KafkaProducer,
+    ) => LogProducer = LogProducer,
+  ) {
     this.clientId = clientId;
     this.broker = broker;
     this.kafkaProducers = new Map();
@@ -49,7 +55,7 @@ export class KafkaService implements OnModuleInit {
     const eventTopicsOnly = this.broker.topics.filter((t) => t !== logTopic);
 
     if (initiateLogProducer) {
-      const logProducer = new LogProducer(this._logProducer);
+      const logProducer = new LogProducerClass(this._logProducer);
       this.kafkaProducers.set(logTopic, logProducer);
     }
 
